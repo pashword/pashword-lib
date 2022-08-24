@@ -128,7 +128,7 @@ export const generatePashword = async (
   // Chrome/v8 seems to handle array operations quite a bit faster than
   // firefox, so using Array.from() with a custom "iterable" is a good idea on
   // for perfomance sake, even if negligeable.
-  if (navigator?.userAgent?.includes('Firefox')) {
+  if (globalThis?.navigator?.userAgent?.includes('Firefox')) {
     /* DEBUG */ _('Firefox detected, using Array.from with length and entry modifier');
     pick_index = Array.from({ length: pashword_length }, (_, i) => i);
   } else {
