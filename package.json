@@ -1,0 +1,49 @@
+{
+  "name": "pashword-lib",
+  "version": "0.1.6",
+  "description": "Pashword generation library",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.(js|ts)\"",
+    "lint": "eslint src --ext .js,.ts",
+    "lint:fix": "eslint src --fix --ext .js,.ts",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pashword/pashword-lib.git"
+  },
+  "keywords": [
+    "password",
+    "pashword",
+    "cryptography"
+  ],
+  "author": "Pashword",
+  "license": "SEE LICENSE IN LICENSE.MD",
+  "bugs": {
+    "url": "https://github.com/pashword/pashword-lib.git/issues"
+  },
+  "homepage": "https://github.com/pashword/pashword-lib.git#readme",
+  "devDependencies": {
+    "@types/debug": "^4.1.7",
+    "@typescript-eslint/eslint-plugin": "5.30.7",
+    "@typescript-eslint/parser": "5.30.7",
+    "eslint": "8.20.0",
+    "prettier": "2.7.1",
+    "typescript": "4.7.4"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "dependencies": {
+    "debug": "^4.3.4",
+    "jssha": "^3.2.0",
+    "scrypt-js": "^3.0.1"
+  }
+}
